@@ -11,7 +11,7 @@ public class ScientificLibraryHall {
     }
 
 
-    public void setSizes(int size) {
+    public void setSize(int size) {
         list.setSize(size);
     }
 
@@ -20,7 +20,7 @@ public class ScientificLibraryHall {
         list.setSize(number);
     }
 
-    public ScientificLibraryHall(String forename, LinkedList list) {
+    public ScientificLibraryHall(String forename, LinkedList<ScientificBook> list) {
         this.forename = forename;
         this.list = list;
     }

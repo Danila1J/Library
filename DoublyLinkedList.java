@@ -5,7 +5,7 @@ public class DoublyLinkedList<T> {
     public int getSize() {
         return size;
     }
-    // переделать ???
+
     public void setSize(int size) {
         int count=this.size;
         for (int i = count; i <size ; i++) {
@@ -19,7 +19,7 @@ public class DoublyLinkedList<T> {
         head.setPrev(head);
     }
 
-    // +
+
     public boolean isEmpty() {
         if (head == null) {
             return true;
@@ -28,7 +28,7 @@ public class DoublyLinkedList<T> {
         }
     }
 
-    // +
+
     public boolean addToTail(T element) {
         NodeTwoLinks<T> last = head.getPrev();
         NodeTwoLinks<T> newNode = new NodeTwoLinks(element, head, head.getPrev());
@@ -38,7 +38,7 @@ public class DoublyLinkedList<T> {
         return true;
     }
 
-    // +
+
     public boolean addNode(int index, T element) {
         if (index == size) {
             addToTail(element);
@@ -58,10 +58,10 @@ public class DoublyLinkedList<T> {
         return true;
     }
 
-    // +
+
     public T get(int index) {
         int count = 0;
-        NodeTwoLinks t = head;
+        NodeTwoLinks<T> t = head;
         while (t.getNext() != head) {
             if (count == index) {
                 return t.getNext().getData();
@@ -72,7 +72,7 @@ public class DoublyLinkedList<T> {
         return null;
     }
 
-    // +
+
     public boolean delNode(int index) {
         int count = 0;
         NodeTwoLinks<T> t = head;
@@ -87,7 +87,7 @@ public class DoublyLinkedList<T> {
         return true;
     }
 
-    // +
+
     public void setNode(int index, T element) {
         NodeTwoLinks<T> n = head;
         int count = 0;

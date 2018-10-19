@@ -1,9 +1,9 @@
 public class NodeTwoLinks<T> {
     private T data;
-    private NodeTwoLinks next;
-    private NodeTwoLinks prev;
+    private NodeTwoLinks<T> next;
+    private NodeTwoLinks<T> prev;
 
-    public NodeTwoLinks(T data, NodeTwoLinks next, NodeTwoLinks prev) {
+    public NodeTwoLinks(T data, NodeTwoLinks<T> next, NodeTwoLinks<T> prev) {
         this.data = data;
         this.next = next;
         this.prev = prev;
@@ -17,24 +17,20 @@ public class NodeTwoLinks<T> {
         this.data = data;
     }
 
-    public NodeTwoLinks getNext() {
+    public NodeTwoLinks<T> getNext() {
         return next;
     }
 
-    public void setNext(NodeTwoLinks next) {
+    public void setNext(NodeTwoLinks<T> next) {
         this.next = next;
     }
 
-    public NodeTwoLinks getPrev() {
+    public NodeTwoLinks<T> getPrev() {
         return prev;
     }
 
-    public void setPrev(NodeTwoLinks prev) {
+    public void setPrev(NodeTwoLinks<T> prev) {
         this.prev = prev;
     }
 
-    public String toString(){
-        String out="";
-        return out=data.toString();
-    }
 }

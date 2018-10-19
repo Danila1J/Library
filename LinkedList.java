@@ -5,7 +5,7 @@ public class LinkedList<T> {
     public int getSize() {
         return size;
     }
-// переделать ???
+
     public void setSize(int size) {
         for (int i = 0; i <size ; i++) {
             addToTail(null);
@@ -17,7 +17,7 @@ public class LinkedList<T> {
         head.setNext(head);
     }
 
-    // +
+
     public boolean isEmpty() {
         if (head == null) {
             return true;
@@ -26,7 +26,7 @@ public class LinkedList<T> {
         }
     }
 
-    // +
+
     public boolean addToTail(T element) {
         Node<T> last = head.getNext();
         while (last.getNext() != head) {
@@ -38,7 +38,7 @@ public class LinkedList<T> {
         return true;
     }
 
-    // +
+
     public boolean addToHead(T element) {
         Node<T> a = new Node<T>(element, head.getNext());
         head.setNext(a);
@@ -46,7 +46,7 @@ public class LinkedList<T> {
         return true;
     }
 
-    // +
+
     public boolean addNode(int index, T element) {
         if (index < 0 | index > size) {
             return false;
@@ -73,7 +73,7 @@ public class LinkedList<T> {
         }
         return true;
     }
-// +
+
     public void setNode(int index, T element) {
         Node<T> n = head;
         Node<T> n1 = new Node<T>(element, null);
@@ -93,7 +93,7 @@ public class LinkedList<T> {
         }
     }
 
-    // +
+
     public boolean delNode(int index) {
         if (index < 0 | index > size) {
             return false;
@@ -116,7 +116,7 @@ public class LinkedList<T> {
         return true;
     }
 
-    // +
+
     public void print() {
         Node<T> t = head.getNext();
         while (t != head) {
@@ -125,18 +125,8 @@ public class LinkedList<T> {
         }
     }
 
-    // +
-//    public int size() {
-//        int count = 0;
-//        Node<T> t = head.getNext();
-//        while (t != head) {
-//            t = t.getNext();
-//            count++;
-//        }
-//        return count;
-//    }
 
-    // +
+
     public Node<T> get(int index) {
         int count = 0;
         Node<T> t = head;
