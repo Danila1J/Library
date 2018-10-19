@@ -30,8 +30,8 @@ public class DoublyLinkedList<T> {
 
     // +
     public boolean addToTail(T element) {
-        NodeTwoLinks last = head.getPrev();
-        NodeTwoLinks newNode = new NodeTwoLinks(element, head, head.getPrev());
+        NodeTwoLinks<T> last = head.getPrev();
+        NodeTwoLinks<T> newNode = new NodeTwoLinks(element, head, head.getPrev());
         newNode.getPrev().setNext(newNode);
         newNode.getNext().setPrev(newNode);
         size++;
@@ -45,10 +45,10 @@ public class DoublyLinkedList<T> {
             return true;
         }
         int count = 0;
-        NodeTwoLinks t = head;
+        NodeTwoLinks<T> t = head;
         while (t.getNext() != head) {
             if (count == index) {
-                NodeTwoLinks n = new NodeTwoLinks(element, t.getNext(), t);
+                NodeTwoLinks<T> n = new NodeTwoLinks(element, t.getNext(), t);
                 t.getNext().setPrev(n);
                 t.setNext(n);
             }
@@ -59,12 +59,12 @@ public class DoublyLinkedList<T> {
     }
 
     // +
-    public NodeTwoLinks get(int index) {
+    public T get(int index) {
         int count = 0;
         NodeTwoLinks t = head;
         while (t.getNext() != head) {
             if (count == index) {
-                return t.getNext();
+                return t.getNext().getData();
             }
             t = t.getNext();
             count++;
@@ -75,7 +75,7 @@ public class DoublyLinkedList<T> {
     // +
     public boolean delNode(int index) {
         int count = 0;
-        NodeTwoLinks t = head;
+        NodeTwoLinks<T> t = head;
         while (t.getNext() != head) {
             if (count == index) {
                 t.setNext(t.getNext().getNext());
@@ -89,16 +89,17 @@ public class DoublyLinkedList<T> {
 
     // +
     public void setNode(int index, T element) {
-        NodeTwoLinks n = head;
+        NodeTwoLinks<T> n = head;
         int count = 0;
         if (index == 0) {
-            NodeTwoLinks n1 = new NodeTwoLinks(element, n.getNext().getNext(), n);
+            NodeTwoLinks<T> n1 = new NodeTwoLinks(element, n.getNext().getNext(), n);
             n.getNext().getNext().setPrev(n1);
             head.setNext(n1);
+            return;
         }
         while (n.getNext() != head) {
             if (count == index) {
-                NodeTwoLinks n1 = new NodeTwoLinks(element, n.getNext().getNext(), n);
+                NodeTwoLinks<T> n1 = new NodeTwoLinks(element, n.getNext().getNext(), n);
                 n.getNext().getNext().setPrev(n1);
                 n.setNext(n1);
                 return;

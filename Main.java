@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Научная библиотека: ");
         System.out.println();
-        LinkedList list1=new LinkedList<>();
+        LinkedList<ScientificBook> list1=new LinkedList<ScientificBook>();
         ScientificBook s1 = new ScientificBook("Александров П.С.", "Энциклопедия элементарной математики", 1150, 1951, 6);
         ScientificBook s2 = new ScientificBook("Писаревский Б.М.", "Беседы о математике и математиках", 450, 2004, 6);
         ScientificBook s3 = new ScientificBook("Соминский И.С", "Метод математической индукции", 600, 1965, 6);
@@ -37,10 +37,10 @@ public class Main {
         ScientificBook book1 = new ScientificBook("Шень А.","Логарифм и экспонента", 199,2005 ,10 );
         ScientificBook book2 = new ScientificBook("Шилдт Г.","Java 8.Полное руководство",2800,2017,20);
         DoublyLinkedList<ScientificLibraryHall> scientificHalls=new DoublyLinkedList<ScientificLibraryHall>();
-        scientificHall.addToTail(hallMath);
-        System.out.println(scientificHall.get(0).getData().);
-        scientificHall.setSize(5);
-        scientificHall.setSize(10);
+        scientificHalls.addToTail(hallMath);
+        System.out.println(scientificHalls.get(0).getBook(0));
+        scientificHalls.setSize(5);
+        scientificHalls.setSize(10);
 //        System.out.println("Добавление книги в зал...");
 //        hallMath.addBook(2, book1);
 //        System.out.println("Список книг этого зала:");
