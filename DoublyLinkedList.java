@@ -8,6 +8,12 @@ public class DoublyLinkedList<T> {
 
     public void setSize(int size) {
         int count=this.size;
+        if (size<count){
+            for (int i = size; i <count ; i++) {
+                delNode(i);
+                return;
+            }
+        }
         for (int i = count; i <size ; i++) {
             addToTail(null);
         }
@@ -80,6 +86,7 @@ public class DoublyLinkedList<T> {
             if (count == index) {
                 t.setNext(t.getNext().getNext());
                 t.getNext().getNext().setPrev(t);
+                size--;
             }
             t = t.getNext();
             count++;
